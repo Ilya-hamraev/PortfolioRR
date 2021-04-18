@@ -61,8 +61,11 @@ const Works = () => {
 
     if (listRef && listRef.current) {
       const list = Array.from(listRef.current.children);
+
       const active = list.find((node) => node.classList.contains("active"));
+
       const prev = active && active.previousElementSibling;
+
       const next = active && active.nextElementSibling;
 
       if (deltaY > 0) {
