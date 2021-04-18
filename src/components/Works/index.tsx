@@ -1,41 +1,16 @@
 import React, { useRef } from "react";
 import { throttle } from "lodash";
 import clx from "classnames";
-import { css } from "@emotion/css";
 
-const container = css`
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 140px);
-  overflow: hidden;
-`;
-
-const section = css`
-  min-height: calc(100vh - 140px);
-  height: calc(100vh - 140px);
-`;
-
-const box = css`
-  height: 100%;
-  transform: translate3d(0, 0, 0);
-  transition: 1s;
-
-  &:nth-child(even) {
-    background: red;
-  }
-
-  &:nth-child(odd) {
-    background: blue;
-  }
-`;
+import * as styles from "components/Works/styles";
 
 const Works = () => {
   const listRef = useRef<HTMLDivElement>(null);
   let inScroll = false;
 
-  const scrollToSection = (sectionEq: number) => {
+  const scrollToSection = (idxEq: number) => {
     let position = 0;
-    position = sectionEq * 100;
+    position = idxEq * 100;
 
     if (listRef.current) {
       if (!inScroll) {
@@ -46,7 +21,7 @@ const Works = () => {
         for (let sibling of list) {
           sibling.classList.remove("active");
         }
-        listRef.current.children[sectionEq].classList.add("active");
+        listRef.current.children[idxEq].classList.add("active");
         listRef.current.style.transform = `translate3d(0, -${position}%, 0)`;
 
         setTimeout(() => {
@@ -61,11 +36,8 @@ const Works = () => {
 
     if (listRef && listRef.current) {
       const list = Array.from(listRef.current.children);
-
       const active = list.find((node) => node.classList.contains("active"));
-
       const prev = active && active.previousElementSibling;
-
       const next = active && active.nextElementSibling;
 
       if (deltaY > 0) {
@@ -91,12 +63,12 @@ const Works = () => {
   const onScroll = throttle(onWheel, 100);
 
   return (
-    <div onWheel={onScroll} className={container}>
-      <div ref={listRef} className={box}>
-        <div className={clx(section, "active")}>1</div>
-        <div className={section}>2</div>
-        <div className={section}>3</div>
-        <div className={section}>4</div>
+    <div onWheel={onScroll} className={styles.container}>
+      <div ref={listRef} className={styles.box}>
+        <div className={clx(styles.section, "active")}>1</div>
+        <div className={styles.section}>2</div>
+        <div className={styles.section}>3</div>
+        <div className={styles.section}>4</div>
       </div>
     </div>
   );

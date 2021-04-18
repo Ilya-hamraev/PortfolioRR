@@ -29,7 +29,12 @@ const Header = () => {
         </div>
         <div className={styles.socials}>
           {socials.map((i, idx) => (
-            <a key={`${i.name}_${idx}`} target="_blank" href={i.link}>
+            <a
+              key={`${i.name}_${idx}`}
+              target="_blank"
+              rel="noreferrer"
+              href={i.link}
+            >
               <FontAwesomeIcon icon={i.iconName} />
             </a>
           ))}
