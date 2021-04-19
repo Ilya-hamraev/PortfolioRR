@@ -3,12 +3,24 @@ import { css } from "@emotion/css";
 import { color } from "helpers/constants";
 
 export const container = css`
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
   height: 100%;
-  padding-top: 50px;
+  padding-top: 100px;
   box-sizing: border-box;
+`;
+
+export const beetwen = css`
+  display: flex;
+`;
+
+export const left = css`
+  padding-top: 50px;
+`;
+
+export const text = css`
+  padding-left: 50px;
 `;
 
 export const avatar_box = css`
@@ -18,8 +30,7 @@ export const avatar_box = css`
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto;
-  margin-bottom: 20px;
-  border: 1px solid ${color.black};
+  border: 1px solid ${color.gray};
 
   img {
     width: 100%;
@@ -31,5 +42,4 @@ export const avatar_box = css`
 export const about_title = css`
   font-size: 1.5em;
   margin-bottom: 20px;
-  text-align: center;
 `;

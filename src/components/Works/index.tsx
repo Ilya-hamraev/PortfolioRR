@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { throttle } from "lodash";
 import clx from "classnames";
 
+import Work from "components/Works/Work";
+import { Portfolio } from "helpers";
 import * as styles from "components/Works/styles";
 
 const Works = () => {
@@ -65,11 +67,29 @@ const Works = () => {
   return (
     <div onWheel={onScroll} className={styles.container}>
       <div ref={listRef} className={styles.box}>
-        <div className={clx(styles.section, "active")}>1</div>
-        <div className={styles.section}>2</div>
-        <div className={styles.section}>3</div>
-        <div className={styles.section}>4</div>
+        {Portfolio.map((el, idx) => (
+          <Work
+            id={el.id}
+            second={idx === 0 ? true : false}
+            name={el.name}
+            description={el.description}
+            img={el.img}
+          />
+        ))}
       </div>
+      <ul className={styles.fixed_menu}>
+        <li>
+          <a
+            className={clx(styles.fixed_item_link, { active: true })}
+            href=""
+          />
+          <a className={styles.fixed_item_link} href="" />
+          <a className={styles.fixed_item_link} href="" />
+          <a className={styles.fixed_item_link} href="" />
+          <a className={styles.fixed_item_link} href="" />
+          <a className={styles.fixed_item_link} href="" />
+        </li>
+      </ul>
     </div>
   );
 };

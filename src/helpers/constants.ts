@@ -5,4 +5,5 @@ export const color = {
   hover_black: "#9e9e9e",
   warning: "#DD0000",
   yellow: "#FFCE00",
+  gray: "#cccccc",
 };
