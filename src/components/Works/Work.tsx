@@ -15,7 +15,7 @@ const Work = ({ name, id, description, img, second = false }: Props) => {
     <div className={clx(styles.section, { active: second })} key={id}>
       <div className={styles.section_box}>
         <img className={styles.preview_photo} src={img} alt="preview" />
-        <span className={styles.description}>
+        {/* <span className={styles.description}>
           <div className={styles.background} />
           <div className={styles.wrapper_desc}>
             <div>
@@ -24,7 +24,7 @@ const Work = ({ name, id, description, img, second = false }: Props) => {
             </div>
             <button className={styles.show}>See full</button>
           </div>
-        </span>
+        </span> */}
       </div>
     </div>
   );

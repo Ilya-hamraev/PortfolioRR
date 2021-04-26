@@ -108,22 +108,37 @@ export const box = css`
 
 export const fixed_menu = css`
   position: fixed;
-  top: 12%;
+  top: 100px;
   right: 2%;
 `;
 
 export const fixed_item_link = css`
   content: "";
-  position: relative;
   display: block;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background-color: ${color.black};
   margin-bottom: 15px;
-  transition: 0.5s;
+  // transition: 0.5s;
+  position: relative;
 
-  &.active {
+  // &.active {
+  //   &:after {
+  //     content: "";
+  //     display: block;
+  //     position: absolute;
+  //     top: -6px;
+  //     left: -6px;
+  //     width: 17px;
+  //     height: 17px;
+  //     border-radius: 50%;
+  //     border: 1px solid ${color.black};
+  //     background: none;
+  //   }
+  // }
+
+  &:hover {
     content: "";
     display: block;
     position: absolute;

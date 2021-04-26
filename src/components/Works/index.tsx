@@ -77,19 +77,13 @@ const Works = () => {
           />
         ))}
       </div>
-      <ul className={styles.fixed_menu}>
-        <li>
-          <a
-            className={clx(styles.fixed_item_link, { active: true })}
-            href=""
-          />
-          <a className={styles.fixed_item_link} href="" />
-          <a className={styles.fixed_item_link} href="" />
-          <a className={styles.fixed_item_link} href="" />
-          <a className={styles.fixed_item_link} href="" />
-          <a className={styles.fixed_item_link} href="" />
-        </li>
-      </ul>
+      {/* <ul className={styles.fixed_menu}>
+        {Portfolio.map((el, idx) => (
+          <li>
+            <a className={styles.fixed_item_link} href="" />
+          </li>
+        ))}
+      </ul> */}
     </div>
   );
 };
